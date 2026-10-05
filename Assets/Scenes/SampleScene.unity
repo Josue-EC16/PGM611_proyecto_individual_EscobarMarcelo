@@ -4058,6 +4058,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 8a29fa03e1b1b344d89e3b863ede3846, type: 2}
+    - target: {fileID: 3153437190823955377, guid: 9d7320ce078c5494396ab0208102f6c7, type: 3}
+      propertyPath: textoAbejas
+      value: 
+      objectReference: {fileID: 1974726596}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
