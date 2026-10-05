@@ -12,6 +12,9 @@ public class Jugador : MonoBehaviour
     public LayerMask layerPiso;
 
     private Animator animator;
+
+    private int cantAbejas = 0;
+    public TMP_Text textoAbejas;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -39,6 +42,8 @@ public class Jugador : MonoBehaviour
         if (collision.transform.CompareTag("abejita"))
         {
             Destroy(collision.gameObject);
+            cantAbejas++;
+            textoAbejas.text = "" + cantAbejas;
         }
     }
 }
