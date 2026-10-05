@@ -33,5 +33,13 @@ public class Jugador : MonoBehaviour
     {
         esPiso = Physics2D.OverlapCircle(comprobadorPiso.position, radioComprobadorPiso, layerPiso);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.CompareTag("abejita"))
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }
 
