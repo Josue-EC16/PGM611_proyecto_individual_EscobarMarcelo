@@ -10,17 +10,22 @@ public class Jugador : MonoBehaviour
     public Transform comprobadorPiso;
     public float radioComprobadorPiso = 0.1f;
     public LayerMask layerPiso;
+
+    private Animator animator;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
         movimiento = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(movimiento * velocidad, rb.linearVelocity.y);
+            rb.linearVelocity = new Vector2(movimiento * velocidad, rb.linearVelocity.y);
         if (movimiento!=0) transform.localScale = new Vector3(Mathf.Sign(movimiento),1,1);
         if(Input.GetButtonDown("Jump")&&esPiso)
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, alturaSalto);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, alturaSalto);
+        animator.SetFloat("Velocidad", Mathf.Abs(movimiento));
+        animator.SetFloat("VelocidadVertical", rb.linearVelocity.y);
     }
 
     public void FixedUpdate()
