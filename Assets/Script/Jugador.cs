@@ -46,6 +46,10 @@ public class Jugador : MonoBehaviour
             cantAbejas++;
             textoAbejas.text = "" + cantAbejas;
         }
+        if (collision.transform.CompareTag("puerquito"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
 }
 
